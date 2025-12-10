@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WizardNotes - Magical Notes for ICSE & CBSE Classes 8-12</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #3a7bd5);
+            color: #fff;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1, h2, h3 {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
+        }
+        /* Magical Welcome */
+        .welcome {
+            margin-top: 20px;
+            font-size: 1.5em;
+            animation: castSpell 3s ease-out;
+            position: relative;
+        }
+        @keyframes castSpell {
+            0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+            50% { opacity: 0.7; transform: scale(1.1) rotate(5deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        .wizard-hat {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDUgQzMwIDUgMzUgMTAgMzUgMTUgQzM1IDIwIDMwIDI1IDI1IDI1IEMyMCAyNSAxNSAyMCAxNSAxNSBDMTUgMTAgMjAgNSAyNSA1IFoiIGZpbGw9IiNmZmQ3MDAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xMCAxNSBMNDAgMTUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg==') no-repeat center;
+            background-size: cover;
+            vertical-align: middle;
+            margin-right: 10px;
+            animation: float 2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 4s linear infinite;
+        }
+        @keyframes sparkle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        /* Sections */
+        section {
+            margin: 50px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        /* Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .buy-btn {
+            background: #ffd700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .buy-btn:hover {
+            background: #ffed4e;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .welcome { font-size: 1.2em; }
+            .wizard-hat { width: 40px; height: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WizardNotes</h1>
+            <div class="welcome">
+                <span class="wizard-hat"></span>
+                Welcome, aspiring wizards! Unleash the power of knowledge with our enchanted notes for ICSE & CBSE classes 8-12. Let the magic begin!
+            </div>
+        </div>
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 7s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About WizardNotes</h2>
+            <p>At WizardNotes, we conjure up high-quality, exam-ready notes tailored for students in classes 8-12 under ICSE and CBSE boards. Our magical resources are designed to make learning fun, effective, and stress-free. Whether you're preparing for science, math, or literature, we've got the spell to help you succeed!</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Our Magical Notes</h2>
+            <div class="products">
+                <!-- ICSE Notes -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/4CAF50/fff?text=ICSE+Class+8" alt="ICSE Class 8 Notes">
+                    <h3>ICSE Class 8 Notes</h3>
+                    <p>Comprehensive notes covering all subjects. Price: ₹500</p>
+                    <button class="buy-btn" onclick="buyNow('ICSE Class 8 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/2196F3/fff?text=ICSE+Class+9" alt="ICSE Class 9 Notes">
+                    <h3>ICSE Class 9 Notes</h3>
+                    <p>Detailed guides for key topics. Price: ₹600</p>
+                    <button class="buy-btn" onclick="buyNow('ICSE Class 9 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/FF9800/fff?text=ICSE+Class+10" alt="ICSE Class 10 Notes">
+                    <h3>ICSE Class 10 Notes</h3>
+                    <p>Exam-focused materials. Price: ₹700</p>
+                    <button class="buy-btn" onclick="buyNow('ICSE Class 10 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/9C27B0/fff?text=ICSE+Class+11" alt="ICSE Class 11 Notes">
+                    <h3>ICSE Class 11 Notes</h3>
+                    <p>Advanced prep for higher studies. Price: ₹800</p>
+                    <button class="buy-btn" onclick="buyNow('ICSE Class 11 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/E91E63/fff?text=ICSE+Class+12" alt="ICSE Class 12 Notes">
+                    <h3>ICSE Class 12 Notes</h3>
+                    <p>Final-year mastery notes. Price: ₹900</p>
+                    <button class="buy-btn" onclick="buyNow('ICSE Class 12 Notes')">Buy Now</button>
+                </div>
+                <!-- CBSE Notes -->
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/4CAF50/fff?text=CBSE+Class+8" alt="CBSE Class 8 Notes">
+                    <h3>CBSE Class 8 Notes</h3>
+                    <p>All-subject coverage. Price: ₹500</p>
+                    <button class="buy-btn" onclick="buyNow('CBSE Class 8 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/2196F3/fff?text=CBSE+Class+9" alt="CBSE Class 9 Notes">
+                    <h3>CBSE Class 9 Notes</h3>
+                    <p>Structured learning aids. Price: ₹600</p>
+                    <button class="buy-btn" onclick="buyNow('CBSE Class 9 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/FF9800/fff?text=CBSE+Class+10" alt="CBSE Class 10 Notes">
+                    <h3>CBSE Class 10 Notes</h3>
+                    <p>Board exam essentials. Price: ₹700</p>
+                    <button class="buy-btn" onclick="buyNow('CBSE Class 10 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/9C27B0/fff?text=CBSE+Class+11" alt="CBSE Class 11 Notes">
+                    <h3>CBSE Class 11 Notes</h3>
+                    <p>Intermediate level prep. Price: ₹800</p>
+                    <button class="buy-btn" onclick="buyNow('CBSE Class 11 Notes')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/250x150/E91E63/fff?text=CBSE+Class+12" alt="CBSE Class 12 Notes">
+                    <h3>CBSE Class 12 Notes</h3>
+                    <p>Graduation-ready notes. Price: ₹900</p>
+                    <button class="buy-btn" onclick="buyNow('CBSE Class 12 Notes')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:fleepzearo@gmail.com" style="color: #ffd700;">fleepzearo@gmail.com</a></p>
+            <p>Mobile: <a href="tel:9572524886" style="color: #ffd700;">9572524886</a></p>
+            <p>&copy; 2023 WizardNotes. All rights reserved. Cast your spell for knowledge!</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Buy Now functionality
+        function buyNow(product) {
+            const subject = encodeURIComponent(`Inquiry for ${product}`);
+            const body = encodeURIComponent(`Hi, I'm interested in purchasing ${product}. Please provide more details.`);
+            window.location.href = `mailto:fleepzearo@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Smooth scroll for any future links (if added)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
